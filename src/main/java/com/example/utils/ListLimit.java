@@ -20,10 +20,12 @@ public class ListLimit {
         if(CollectionUtils.isEmpty(originList)) {
             return;
         }
+        List<String> list = new ArrayList();
         Integer totalPage = originList.size()/count + 1;
 
+        Integer co = totalPage;
         while(totalPage > 0){
-            for (int i = 0;i<totalPage;i++){
+            for (int i = 0;i<co;i++){
                 List<String> collect = originList.stream().skip(i * count).limit(count).collect(Collectors.toList());
                 System.out.println(collect.toString());
             }
@@ -37,10 +39,6 @@ public class ListLimit {
     public static void IntStreamTest(){
 
         List<Person> list = new ArrayList<>();
-        list.add(new Person());
-        list.add(new Person());
-        list.add(new Person());
-        list.add(new Person());
         IntStream.range(0,list.size()).forEach(i->list.get(i).setAge(i+1));
         list.stream().forEach(i->System.out.println(i));
     }
@@ -48,18 +46,26 @@ public class ListLimit {
     public static void main(String[] args) {
 
         List<String> list = new ArrayList<>();
-        list.add(null);
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        list.add("4");
+        list.add("5");
+        list.add("6");
+        list.add("7");
+        list.add("8");
+        list.add("9");
+        list.add("10");
+        list.add("11");
+        list.add("12");
+
         System.out.println(list.toString());
-//        list.add("1");
-//
-//        getLimitList(list,10);
 
+        //getLimitList(list,10);
 
-//        IntStreamTest();
-        System.out.println(2/2);
-        System.out.println(2%2);
-        System.out.println(2%3);
-        System.out.println(2%1);
+        List<String> collect = list.stream().skip(0).limit(1).collect(Collectors.toList());
+
+        System.out.println(collect.toString());
 
     }
 
