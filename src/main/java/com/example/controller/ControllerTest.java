@@ -3,10 +3,7 @@ package com.example.controller;
 import com.example.businessService.AuthorService;
 import com.example.model.TAuthor;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -25,6 +22,7 @@ public class ControllerTest {
 
     @RequestMapping("/")
     String home() {
+        System.out.println("aa");
         return "Hello World!";
     }
 
@@ -40,5 +38,18 @@ public class ControllerTest {
             throw new RuntimeException("查询错误");
         }
         return author;
+    }
+
+    @RequestMapping(value = "realName", method = RequestMethod.GET)
+    @ResponseBody
+    public void update(String realName, HttpServletRequest request) {
+        TAuthor author = new TAuthor();
+        author.setRealName(realName);
+        author.setNickName("bb");
+        author.setId(1L);
+        Boolean aBoolean = authorService.updateAuthor(author);
+        if(!aBoolean){
+            throw new RuntimeException("更新错误");
+        }
     }
 }

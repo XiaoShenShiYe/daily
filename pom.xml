@@ -20,6 +20,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <spring.boot.version>1.5.12.RELEASE</spring.boot.version>
         <fastjson.version>1.2.45</fastjson.version>
         <mapper.version>4.0.2</mapper.version>
         <mapper-generator.version>1.0.0</mapper-generator.version>
@@ -103,6 +104,13 @@
             <artifactId>commons-lang3</artifactId>
             <version>${commons-lang3.version}</version>
         </dependency>
+
+        <!-- 应用监控 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!-- 应用监控 -->
 
 
     </dependencies>

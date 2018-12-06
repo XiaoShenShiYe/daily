@@ -8,7 +8,7 @@ public class TAuthor {
      * 用户ID
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "JDBC")
     private Long id;
 
     /**

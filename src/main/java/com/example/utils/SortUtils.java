@@ -51,19 +51,42 @@ public class SortUtils {
 
 
     public static void main(String[] args) {
-        List<Person> list = new ArrayList<>();
-        list.add(new Person(1,"a","123"));
-        list.add(new Person(2,"c","124"));
-        list.add(new Person(3,"a","122"));
-        list.add(new Person(4,"a","156"));
 
-        list.add(new Person(5,"a","111"));
+        List<String> list = new ArrayList<>();
+        list.add("aaa");
+        list.add("aba");
+        list.add("aac");
 
-        list.add(new Person(6,"a","178"));
+        List<String> collect = list.stream().sorted(new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return org.apache.commons.lang3.StringUtils.compare(o1, o2);
+            }
+        }).collect(Collectors.toList());
+        System.out.println(collect);
 
-        List<Person> people = sortList(list, Colume.ONE);
 
-        System.out.println(people.toString());
+        //System.out.println(org.apache.commons.lang3.StringUtils.compare("abc","aac"));
+
+//        List<Person> list = new ArrayList<>();
+//        list.add(new Person(1,"a","123"));
+//        list.add(new Person(2,"c","124"));
+//        list.add(new Person(3,"a","122"));
+//        list.add(new Person(4,"a","156"));
+//
+//        list.add(new Person(5,"a","111"));
+//
+//        list.add(new Person(6,"a","178"));
+//
+//        List<Person> people = sortList(list, Colume.ONE);
+//
+//        System.out.println(people.toString());
+
+    }
+
+
+    public static void gather(List<Person> list){
+
 
     }
 
