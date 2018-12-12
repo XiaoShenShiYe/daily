@@ -14,8 +14,11 @@ import javax.annotation.Resource;
  * @Email harvey.shen@jollycorp.com
  * @Date 15:25 2018/11/20
  */
-@Service
+@Service(value = "authorService")
 public class AuthorSeriveImpl implements AuthorService {
+    static{
+        System.out.println("i am authorServiceImpl");
+    }
 
     @Autowired
     private TAuthorMapper authorMapper;

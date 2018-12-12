@@ -15,7 +15,10 @@ import javax.servlet.http.HttpServletRequest;
  */
 @RestController
 @EnableAutoConfiguration
-public class ControllerTest {
+public class ControllerTest{
+    static {
+        System.out.println("i am controllerTest");
+    }
 
     @Resource
     private AuthorService authorService;
