@@ -27,7 +27,7 @@
         <mapper-spring-boot-starter.version>2.0.2</mapper-spring-boot-starter.version>
         <pagehelper.version>1.2.5</pagehelper.version>
         <maven.compiler.plugin.version>3.7.0</maven.compiler.plugin.version>
-        <mysql.version>5.1.35</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
         <druid-spring-boot-starter.version>1.1.9</druid-spring-boot-starter.version>
 
         <!--  MyBatis Generator  -->
